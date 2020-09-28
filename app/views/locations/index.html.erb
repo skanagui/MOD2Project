@@ -1,0 +1,7 @@
+<h1>Locations Index</h1>
+
+<p><% @locations.each do |n| %></p>
+<%= link_to n.name, location_path(n)  %>
+<%end %>
+
+<%#Add ref to image > google maps > directions %>

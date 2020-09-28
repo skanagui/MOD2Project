@@ -1,5 +1,11 @@
 <%= form_for @meetup do |f| %>
 <br>
+<%= f.label :user_id %>
+<%= f.collection_select :user_id, User.all, :id, :name %>
+<br>
+<%= f.label :location_id %>
+<%= f.collection_select :location_id, Location.all, :id, :name %>
+<br>
 <%= f.label :purpose %>
 <%= f.text_field :purpose %>
 <br>
