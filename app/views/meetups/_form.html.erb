@@ -1,0 +1,10 @@
+<%= form_for @meetup do |f| %>
+<br>
+<%= f.label :purpose %>
+<%= f.text_field :purpose %>
+<br>
+<%= f.label :time %>
+<%= f.number_field :time %>
+<br>
+<%= f.submit %>
+<% end %>
