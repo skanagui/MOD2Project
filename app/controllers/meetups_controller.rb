@@ -1,6 +1,7 @@
 class MeetupsController < ApplicationController
 
     def index
+        swdefgbhnjmk,l.k,mhgfdsza
     end 
     def show
     end
