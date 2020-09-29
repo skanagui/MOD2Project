@@ -11,12 +11,13 @@ User.destroy_all
 Location.destroy_all
 
 
+#20.times do
+#   User.create({name: Faker::Name.name, age: Faker::Number.between(from: 1, to: 100)})
 
-
-seysamger = User.create(name: "Seyi-Sam-Gerard", age: 28, email: "AllOfUs@gmail.com", borough: "Manhattan", phone_number: 1234567890)
-squidsam = User.create(name: "Johnny B Good", age: 32, email: "buddy@gmail.com", borough: "Staten Island", phone_number: 5555555555)
-squidseyi = User.create(name: "Squid Seyi", age: 17, email: "someone@gmail.com", borough: "Bronx", phone_number: 8001357999)
-squidg = User.create(name: "Squid G", age: 21, email: "squadgoals@hotmail.com", borough: "Queens", phone_number: 9876543210)
+seysamger = User.create(name: "Seyi-Sam-Gerard", age: 28, email: "AllOfUs@gmail.com", borough: "Manhattan", phone_number: 1234567890, password: "abc123")
+squidsam = User.create(name: "Johnny B Good", age: 32, email: "buddy@gmail.com", borough: "Staten Island", phone_number: 5555555555, password: "abc123")
+squidseyi = User.create(name: "Squid Seyi", age: 17, email: "someone@gmail.com", borough: "Bronx", phone_number: 8001357999, password: "abc123")
+squidg = User.create(name: "Squid G", age: 21, email: "squadgoals@hotmail.com", borough: "Queens", phone_number: 9876543210, password: "abc123")
 
 ####  Users
 
