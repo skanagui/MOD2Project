@@ -1,5 +1,8 @@
 <h1>Meetups Index </h1>
 
 <% @meetups.each do |m| %>
-<li><%= link_to m.purpose, meetup_path(m) %> | <%= m.time %> </li>
+<li>
+<%= link_to m.purpose, meetup_path(m) %> | <%= m.time %> 
+<%= button_to "Cancel Meetup  :(", meetup_path(m), method: :delete %><br>
+</li>
 <% end %>

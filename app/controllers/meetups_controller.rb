@@ -7,6 +7,7 @@ class MeetupsController < ApplicationController
         @meetup = Meetup.find(params[:id])
     end
 
+
     def new
         @meetup = Meetup.new 
     end 
@@ -24,14 +25,27 @@ class MeetupsController < ApplicationController
 
     end
     
+
     def edit
         @meetup = Meetup.find(params[:id])
     end 
     def update 
     end
 
-    def delete
+    def destroy
+        @meetup = Meetup.find(params[:id])
+        @meetup.destroy
         
+        redirect_to meetups_path
+    end 
+
+
+    def time_to_ampm(chosen_time)
+        if   (chosen_time >  0 && chosen_time < 12)
+              return chosen_time.to_s + "am"
+        elsif(chosen_time > 12 && chosen_time < 25)
+              return chosen_time.to_s + "pm"
+        end 
     end 
     
     

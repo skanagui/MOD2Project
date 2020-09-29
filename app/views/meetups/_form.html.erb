@@ -6,6 +6,11 @@
 <%= f.label :location_id %>
 <%= f.collection_select :location_id, Location.all, :id, :name %>
 <br>
+
+    <%# if true %>
+    <%#  render "ownlocation" %>
+    <%# end %>
+
 <%= f.label :purpose %>
 <%= f.text_field :purpose %>
 <br>

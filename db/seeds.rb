@@ -27,6 +27,8 @@ squidg = User.create(name: "Squid G", age: 21, email: "squadgoals@hotmail.com", 
 # ""
 
 # ]
+choose_your_own = Location.create(name: "TYPE IN YOUR LOCATION", address: "EXPECTED FROM USER", description: "EXPECTED FROM USER")
+
 penn = Location.create(name: "Penn Station", address: "New York, NY", description: "Center of the universe.")
 msg = Location.create(name: "Madison Square Garden", address: "4 Pennsylvania Plaza, New York, NY 10001", description: "Where the NY Knicks and Rangers play.")
 bronx = Location.create(name: "Bronx", address: "53 Terrace Way, New York, NY 10034", description: "Sam's Hood")

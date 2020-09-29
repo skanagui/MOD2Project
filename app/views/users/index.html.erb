@@ -1,0 +1,5 @@
+<h1> User Index </h1>
+
+<p><%@users.each do |n| %></p>
+<%= link_to n.name, user_path(n) %>
+<%end %>
