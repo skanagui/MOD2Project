@@ -2,7 +2,10 @@
 
 <% @meetups.each do |m| %>
 <li>
-<%= link_to m.purpose, meetup_path(m) %> | <%= m.time %> 
+<%= link_to m.purpose, meetup_path(m) %> | <%= m.time_to_ampm(m.time) %> 
 <%= button_to "Cancel Meetup  :(", meetup_path(m), method: :delete %><br>
 </li>
 <% end %>
+
+<br><br>
+<%= button_to "Make a New Meetup! 👯💫", new_meetup_path, method: :get %>

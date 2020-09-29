@@ -12,16 +12,21 @@ class MeetupsController < ApplicationController
         @meetup = Meetup.new 
     end 
     def create
-        @meetup = Meetup.create(meetup_params)
-                redirect_to meetups_path
+        # @locations = Location.all
+        # @location = Location.find(params[:id])
 
 
-        # if @meetup.valid?
-        #    redirect_to meetup_path(meetups)
-        # else
-        #     flash[:user_errors] = @meetup.errors.full_messages
-        #     redirect_to new_meetup_path
-        # end
+        meetup = Meetup.create(meetup_params)
+                  # redirect_to meetups_path
+
+
+        if meetup.valid?
+           redirect_to meetups_path
+        #    redirect_to meetups_path(meetups)
+        else
+            flash[:user_errors] = meetup.errors.full_messages
+            redirect_to new_meetup_path
+        end
 
     end
     
@@ -32,6 +37,7 @@ class MeetupsController < ApplicationController
     def update 
     end
 
+
     def destroy
         @meetup = Meetup.find(params[:id])
         @meetup.destroy
@@ -40,19 +46,13 @@ class MeetupsController < ApplicationController
     end 
 
 
-    def time_to_ampm(chosen_time)
-        if   (chosen_time >  0 && chosen_time < 12)
-              return chosen_time.to_s + "am"
-        elsif(chosen_time > 12 && chosen_time < 25)
-              return chosen_time.to_s + "pm"
-        end 
-    end 
+
     
     
     private
     
     def meetup_params
-        params.require(:meetup).permit(:purpose, :time, :user_id, :location_id )
+        params.require(:meetup).permit(:purpose, :time, :user_id, :location_id)
     end 
 
 end

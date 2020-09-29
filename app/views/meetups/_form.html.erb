@@ -1,15 +1,32 @@
+<% if flash[:user_errors]%>
+<%    flash[:user_errors].each do |u_er| %>
+
+      <p style="color:red" > <%= u_er %> </p>
+
+      <% end %>
+<% end %>
+
+
+
+
 <%= form_for @meetup do |f| %>
 <br>
 <%= f.label :user_id %>
 <%= f.collection_select :user_id, User.all, :id, :name %>
 <br>
 <%= f.label :location_id %>
-<%= f.collection_select :location_id, Location.all, :id, :name %>
+<%= location_choice = f.collection_select :location_id, Location.all, :id, :name %>
+
+                    <%#= button_to "Make A New Location", { :action => 'new' }, method: :get %>
+
 <br>
 
-    <%# if true %>
-    <%#  render "ownlocation" %>
-    <%# end %>
+
+    <%# if(location_choice == Location.first.id) %>
+        <%# if(true) %>
+    <%#  render "locationform" %>
+     <%# end %>
+
 
 <%= f.label :purpose %>
 <%= f.text_field :purpose %>

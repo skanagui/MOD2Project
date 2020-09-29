@@ -15,6 +15,7 @@ class LocationsController < ApplicationController
     end
     
     def edit
+        @location = Location.find(params[:id])
     end 
     def update 
     end
@@ -22,8 +23,18 @@ class LocationsController < ApplicationController
     def delete
     end 
     
+
+##  XX-
+    # def self.new_meetup_location_params
+    #     self.get_params.require(:location).permit(:name, :address, :description)
+    # end 
+
+    
     private
+
     def location_params
         params.require(:location).permit(:name, :address, :description)
     end 
 end
+
+
