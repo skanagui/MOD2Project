@@ -1,7 +1,8 @@
 class LocationsController < ApplicationController
     def index
-        @locations = Location.all 
+        @locations = Location.search(params[:search])
     end 
+
     def show
         @location = Location.find(params[:id])
     end
@@ -29,12 +30,12 @@ class LocationsController < ApplicationController
     #     self.get_params.require(:location).permit(:name, :address, :description)
     # end 
 
-    
     private
 
     def location_params
-        params.require(:location).permit(:name, :address, :description)
-    end 
+        params.require(:location).permit(:name, :address, :description, :search, :location_id)
+    end
+
 end
 
 

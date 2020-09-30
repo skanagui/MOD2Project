@@ -15,6 +15,6 @@
 
 <h1> Meeting Purpose </h1>
 <p> <% @user.meetups.each do |meetup| %></p>
-<p>Purpose: <%= meetup.purpose%> | Time: <%= meetup.time %></p>
+<p>Purpose: <%= meetup.purpose%> | Time: <%= meetup.time_to_ampm(meetup.time) %></p>
 <%end %>
 

@@ -13,32 +13,13 @@ class Meetup < ApplicationRecord
                      chosen_time = 12
               end   
               return chosen_time.to_s + "am"
-        elsif(chosen_time > 11 && chosen_time < 24)
-                case chosen_time  ##  ***  pretty sure there's a shorter way without so many cases
-                when 13
-                     chosen_time =  1  
-                when 14
-                     chosen_time =  2  
-                when 15
-                     chosen_time =  3
-                when 16
-                     chosen_time =  4  
-                when 17
-                     chosen_time =  5  
-                when 18
-                     chosen_time =  6
-                when 19
-                     chosen_time =  7  
-                when 20
-                     chosen_time =  8  
-                when 21
-                     chosen_time =  9
-                when 22
-                     chosen_time = 10  
-                when 23
-                     chosen_time = 11                                                                                                    
-                end 
-              return chosen_time.to_s + "pm"
+        elsif(chosen_time == 12 || chosen_time > 11  &&  chosen_time < 24)
+               if    (chosen_time == 12)
+                      chosen_time =  12
+               return chosen_time.to_s + "pm"
+               end
+                      chosen_time = (chosen_time - 12)
+               return chosen_time.to_s + "pm"
         end 
     end 
 

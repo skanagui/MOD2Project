@@ -33,8 +33,23 @@ class MeetupsController < ApplicationController
 
     def edit
         @meetup = Meetup.find(params[:id])
+
+        #  XX-
+        # redirect_to edit_meetup_path(@meetup)
+
+
     end 
-    def update 
+    def update
+        @meetup = Meetup.find(params[:id])
+
+        if @meetup.valid?
+            redirect_to meetup_path(@meetup)
+         #    redirect_to meetups_path(meetups)
+        else
+             flash[:user_errors] = @meetup.errors.full_messages
+             redirect_to meetup_path(@meetup)
+        end
+
     end
 
 

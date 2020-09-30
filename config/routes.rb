@@ -7,4 +7,7 @@ Rails.application.routes.draw do
   get "/login", to: "users#login", as: "login"
   post "/login", to: "users#handle_login"
 
+  get "/locations", to: "locations#show"
+
+  # patch "/meetups/:id/edit", to: "meetups#edit", as: "edit_meetup"
 end
