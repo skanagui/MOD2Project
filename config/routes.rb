@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  resources :blogs
   resources :users
-  resources :locations
+  resources :location
+  resources :blogss
   resources :meetups 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
@@ -11,3 +13,4 @@ Rails.application.routes.draw do
 
   # patch "/meetups/:id/edit", to: "meetups#edit", as: "edit_meetup"
 end
+

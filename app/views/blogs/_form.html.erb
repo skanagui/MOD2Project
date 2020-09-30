@@ -1,0 +1,22 @@
+<%# if flash[:my_errors] %>
+    <%# flash[:my_errors].each do |e| %>
+        <%# e %>
+    <%# end %>
+<%# end %>
+    
+
+<%= form_for @blog do |f| %>
+<%= f.label :title %>
+<%= f.text_field :title %>
+<br>
+<%= f.label :body%>
+<%= f.text_field :body %>
+<br>
+<%= f.label :date %>
+<%= f.text_field :date%>
+<br>
+<%= f.label :likes %>
+<%= f.number_field :likes %>
+
+<%= f.submit %>
+<% end %>

@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_29_200020) do
+ActiveRecord::Schema.define(version: 2020_09_30_204411) do
+
+  create_table "blogs", force: :cascade do |t|
+    t.string "title"
+    t.string "body"
+    t.string "date"
+    t.integer "likes"
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "locations", force: :cascade do |t|
     t.string "name"

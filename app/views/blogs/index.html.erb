@@ -1,0 +1,7 @@
+<h1> Blog Index </h1>
+
+<% @blogs.each do |b| %>
+<ul>
+<%= link_to b.title, blog_path(b)  %>
+</ul>
+<% end %>

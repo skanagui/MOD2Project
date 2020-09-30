@@ -1,7 +1,7 @@
 class LocationsController < ApplicationController
     def index
-        @locations = Location.search(params[:search])
-    end 
+        @locations = Location.all 
+    end
 
     def show
         @location = Location.find(params[:id])
@@ -24,7 +24,6 @@ class LocationsController < ApplicationController
     def delete
     end 
     
-
 ##  XX-
     # def self.new_meetup_location_params
     #     self.get_params.require(:location).permit(:name, :address, :description)
@@ -33,7 +32,7 @@ class LocationsController < ApplicationController
     private
 
     def location_params
-        params.require(:location).permit(:name, :address, :description, :search, :location_id)
+        params.require(:location).permit(:name, :address, :description)
     end
 
 end

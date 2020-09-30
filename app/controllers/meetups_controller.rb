@@ -12,17 +12,12 @@ class MeetupsController < ApplicationController
         @meetup = Meetup.new 
     end 
     def create
-        # @locations = Location.all
-        # @location = Location.find(params[:id])
-
-
         meetup = Meetup.create(meetup_params)
                   # redirect_to meetups_path
 
 
         if meetup.valid?
            redirect_to meetups_path
-        #    redirect_to meetups_path(meetups)
         else
             flash[:user_errors] = meetup.errors.full_messages
             redirect_to new_meetup_path
@@ -33,17 +28,12 @@ class MeetupsController < ApplicationController
 
     def edit
         @meetup = Meetup.find(params[:id])
-
-        #  XX-
-        # redirect_to edit_meetup_path(@meetup)
-
-
     end 
     def update
         @meetup = Meetup.find(params[:id])
 
         if @meetup.valid?
-            redirect_to meetup_path(@meetup)
+            redirect_to meetups_path
          #    redirect_to meetups_path(meetups)
         else
              flash[:user_errors] = @meetup.errors.full_messages

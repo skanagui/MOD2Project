@@ -10,11 +10,19 @@
 
 <p> Meetups: <% @user.locations.each do |location| %> </p>
 <p>Location: <%= link_to location.name %>  | Address:  <%= location.address %>  |  Description: <%= location.description %></p>
-<%end %>
+<% end %>
+<br><br>
 
 
 <h1> Meeting Purpose </h1>
 <p> <% @user.meetups.each do |meetup| %></p>
 <p>Purpose: <%= meetup.purpose%> | Time: <%= meetup.time_to_ampm(meetup.time) %></p>
 <%end %>
+<br><br>
 
+
+<h1> Checkout My Blogs! </h1>
+
+<p> <% @user.blogs.each do |b| %> </p>
+<%= link_to b.title, blog_path(b) %>
+<% end %>

@@ -49,6 +49,14 @@ meet3 = Meetup.create(purpose: "jog", time: 11, user_id: User.third.id, location
 ####  MeetUps
 
 
+blog1 = Blog.create(title: "NYC", body: "sj;dlfjasldjflksajdflkjasd;fjlasjdflkasjdflk", date: "Dec 5, 1989", likes: 1, user_id: User.first.id)
 
-
-
+# (2..10).to_a.sample.times do 
+#     Blog.create({
+#       title: Faker::Hipster.sentence(3),
+#       body: Faker::Hipster.paragraphs(4),
+#       date: Faker::Date.between(from: '2012-01-23', to: '2020-9-25') 
+#       likes: rand(0..5)
+#       }) 
+#     end
+### Blog
