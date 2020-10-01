@@ -55,8 +55,9 @@ blog1 = Blog.create(title: "NYC", body: "sj;dlfjasldjflksajdflkjasd;fjlasjdflkas
 #     Blog.create({
 #       title: Faker::Hipster.sentence(3),
 #       body: Faker::Hipster.paragraphs(4),
-#       date: Faker::Date.between(from: '2012-01-23', to: '2020-9-25') 
+#       date: Faker::Date.between(from: '2000-01-23', to: '2020-9-25'), 
 #       likes: rand(0..5)
 #       }) 
 #     end
+
 ### Blog
