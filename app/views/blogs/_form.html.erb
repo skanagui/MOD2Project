@@ -6,8 +6,8 @@
     
 
 <%= form_for @blog do |f| %>
-<%= f.label :user_id %>
-<%= f.collection_select :user_id, User.all, :id, :name %><br>
+<%# f.label :user_id %>
+ <%# f.text_field :user_id %>  <%#collection_select :user_id, User.all, :id, :name %><br>
 
 <%= f.label :title %>
 <%= f.text_field :title %>
@@ -18,8 +18,8 @@
 <%= f.label :date %>
 <%= f.text_field :date%>
 <br>
-<%= f.label :likes %>
-<%= f.number_field :likes %>
+<%#f.label :likes %>
+<%# f.number_field :likes %>
 
 <%= f.submit %>
 

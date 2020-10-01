@@ -7,7 +7,7 @@
 <% @meetups.each do |m| %>
 <li>
 <%= link_to m.purpose, meetup_path(m) %> | <%= m.time_to_ampm(m.time) %>  
-<%= button_to "Edit Meetup💫",     edit_meetup_path(m), method: :edit      %>
+<%= button_to "Edit Meetup💫",     edit_meetup_path(m), method: :get     %>
 <%= button_to "Cancel Meetup  :(", meetup_path(m), method: :delete    %><br>
 </li>
 <% end %>
@@ -17,4 +17,3 @@
 
 
 <br><br><br><br>
-<%= button_to "*** TEST EDIT BUTTON ***", edit_meetup_path(Meetup.first.id), method: :patch %>

@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
     before_action :set_current_user
 
     
-    # before_action :authorized
+    before_action :authorized
 
 
     # # Allows you to use this method in the views

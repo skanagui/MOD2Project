@@ -40,7 +40,7 @@ class MeetupsController < ApplicationController
     def update
         @meetup = Meetup.find(params[:id])
 
-        if @meetup.valid?
+        if @meetup.update(meetup_params)
             redirect_to meetups_path
          #    redirect_to meetups_path(meetups)
         else

@@ -20,16 +20,21 @@ class BlogsController < ApplicationController
         @blog = Blog.new 
     end 
     def create
-        @current_user = User.find_by(id: session[:user])
+        #@current_user = User.find_by(id: session[:user])
+        #@user = @current_user
+        newblog= @current_user.blogs << Blog.create(blog_params)
+        #byebug
+        redirect_to blogs_path
 
-        @blog = Blog.create(blog_params)
+
+        #@blog = Blog.create(blog_params)
         # if @current_user = current_user.id
-        if @blog.valid?
-            redirect_to blogs_path
-        else
-            flash[:my_errors] = @blog.errors.full_messages
-            redirect_to new_blog_path
-        end 
+        # if @blog.valid?
+        #     redirect_to blogs_path
+        # else
+        #     flash[:my_errors] = @blog.errors.full_messages
+        #     redirect_to new_blog_path
+        # end 
         # end
         #redirect_to blogs_path
     end

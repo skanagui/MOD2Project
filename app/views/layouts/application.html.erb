@@ -12,8 +12,10 @@
 
 
   <body>
+   
+   <% if @current_user %>
    <nav>Logged in as:<%=@current_user.name %>
- 
+   <%end %>
     <%= yield %>
   </body>
 </html>
