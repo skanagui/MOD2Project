@@ -1,17 +1,23 @@
 class MeetupsController < ApplicationController
 
     def index
+        @current_user = User.find_by(id: session[:user])
         @meetups = Meetup.all
     end 
     def show
+        @current_user = User.find_by(id: session[:user])
         @meetup = Meetup.find(params[:id])
+
     end
 
 
     def new
+        @current_user = User.find_by(id: session[:user])
         @meetup = Meetup.new 
     end 
     def create
+        @current_user = User.find_by(id: session[:user])
+
         meetup = Meetup.create(meetup_params)
                   # redirect_to meetups_path
 
@@ -27,6 +33,8 @@ class MeetupsController < ApplicationController
     
 
     def edit
+        @current_user = User.find_by(id: session[:user])
+
         @meetup = Meetup.find(params[:id])
     end 
     def update
@@ -42,7 +50,6 @@ class MeetupsController < ApplicationController
 
     end
 
-
     def destroy
         @meetup = Meetup.find(params[:id])
         @meetup.destroy
@@ -50,10 +57,6 @@ class MeetupsController < ApplicationController
         redirect_to meetups_path
     end 
 
-
-
-    
-    
     private
     
     def meetup_params

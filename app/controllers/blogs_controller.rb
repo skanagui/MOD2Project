@@ -3,34 +3,46 @@ class BlogsController < ApplicationController
     before_action :find_blog, only: [:show, :edit, :update, :likes]
 
     def index
+        @current_user = User.find_by(id: session[:user])
         @blogs = Blog.all
     end 
 
     def show
+        @current_user = User.find_by(id: session[:user])
+
         @blog = Blog.find(params[:id])
     end 
 
 
     def new
+        @current_user = User.find_by(id: session[:user])
+
         @blog = Blog.new 
     end 
     def create
-        @blog = Blog.create(blog_params)
+        @current_user = User.find_by(id: session[:user])
 
+        @blog = Blog.create(blog_params)
+        # if @current_user = current_user.id
         if @blog.valid?
-            redirect_to blog_path(blog)
+            redirect_to blogs_path
         else
             flash[:my_errors] = @blog.errors.full_messages
             redirect_to new_blog_path
         end 
+        # end
         #redirect_to blogs_path
     end
 
 
     def edit
+        @current_user = User.find_by(id: session[:user])
+
         @blog = Blog.find(params[:id])
     end 
     def update
+        @current_user = User.find_by(id: session[:user])
+
         @blog = Blog.find(params[:id])
         
         @blog.update(blog_params)

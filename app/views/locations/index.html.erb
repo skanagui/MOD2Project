@@ -1,16 +1,22 @@
 <h1>Locations Index</h1>
 
+
+
 <%#Add ref to image > google maps > directions %>
 
-<h3> Search Bar </h3>
-
-  <p> <%= form_tag(locations_path, method: :get) do %> </p>
-    <%= text_field_tag(:search, params[:search]) %>
-    <%= submit_tag ("Search") %>
-  <% end %>
 
   <p> <% @locations.each do |location| %> </p>
     <ul>
       <li> <%= link_to location.name, location_path(location) %> </li><br>
     </ul>
   <% end %>
+  
+
+
+
+<h3> Search Bar </h3>
+
+<%# form_tag(locations_path, method: :get) do %> 
+    <%# text_field_tag(:search, params[:search]) %>
+    <%# submit_tag ("Search") %>
+  <%# end %>
